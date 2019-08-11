@@ -2,7 +2,7 @@ body, html{
   padding: 0;
   margin: 0;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   background-color: white;
   /*background-color: rgba(17, 43, 40);*/
   /*color: rgb(214, 214, 214);*/
@@ -12,7 +12,7 @@ body{
   padding-bottom: 10rem;
   overflow-x: hidden;
   display: block;
-  width: 70rem;
+  width: 90rem;
   margin: 0 auto;
 }
 
@@ -92,7 +92,14 @@ li{
 }
 
 
-
+@media(max-width: 1440px){
+body, html{
+  font-size: 14px;
+}
+body{
+  width: 70rem;
+}
+}
 
 @media(max-width: 1280px){
   body{
