@@ -101,8 +101,14 @@ body, html{
   font-size: 14px;
 }
 body{
-  width: 70rem;
+  width: 80rem;
 }
+}
+
+@media(max-width: 1280px){
+  body{
+    width: 70rem;
+  }
 }
 
 @media(max-width: 900px){
