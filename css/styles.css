@@ -147,29 +147,6 @@ body{
 }
 
 
-
-/*=======================================*/
-
-::-webkit-scrollbar {
-  width: 2%;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  /*background: black;*/
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  /*border: 5px dotted white;*/
-  box-sizing: border-box;: 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 nav{
 	position: relative;
 	margin-top: 20rem;
