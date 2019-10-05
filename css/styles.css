@@ -26,21 +26,11 @@
 body, html{
   padding: 0;
   margin: 0;
-  width: 100%;
   font-size: 16px;
-  background-color: white;
+  background-color: rgb(230,230,230);
   /*background-color: rgba(17, 43, 40);*/
   /*color: rgb(214, 214, 214);*/
 }
-
-body{
-  padding-bottom: 10rem;
-  overflow-x: hidden;
-  display: block;
-  width: 90rem;
-  margin: 0 auto;
-}
-
 a{
   color: black;
   padding-left: 0.2rem;
@@ -51,10 +41,8 @@ a{
 
 h1, h2, h3, h4, h5, h6, p, ul, li, form{
   padding: 0;
-  width: 95%;
-  margin: 0 auto;
+  margin: 0;
   box-sizing: border-box;
-  transform: rotate(-0.25deg);
 }
 
 h1, h2, h3{
@@ -74,8 +62,8 @@ h1{
 }
 
 h2{
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  /*margin-top: 4rem;*/
+  /*margin-bottom: 2rem;*/
   font-family: 'Lausanne-300', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4em;
@@ -117,19 +105,38 @@ li{
   margin-left: 0;
 }
 
+.button{
+  border: solid 1px black;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: black;
+  font-family: 'Lausanne-300', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(255,255,255,0.8);
+  z-index: 10;
+}
+
 
 @media(max-width: 1440px){
 body, html{
   font-size: 14px;
 }
 body{
-  width: 80rem;
+  /*width: 80rem;*/
+
 }
 }
 
 @media(max-width: 1280px){
   body{
-    width: 70rem;
+    /*width: 70rem;*/
   }
 }
 
@@ -143,13 +150,31 @@ body{
 
 /*=======================================*/
 
+::-webkit-scrollbar {
+  width: 2%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /*background: black;*/
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /*border: 5px dotted white;*/
+  box-sizing: border-box;: 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 nav{
 	position: relative;
 	margin-top: 20rem;
-	margin-bottom: 10rem;
 	width: 100%;
 	z-index: 0;
-	transform: rotate(-0.25deg);
 	
 }
 
@@ -183,24 +208,6 @@ section.full form{
 	transform: translateX(-50%);
 }
 
-.content{
-	overflow-y: hidden;
-	max-height: 12rem;
-	box-sizing: border-box;
-	border-bottom: solid 1px black;
-	padding-bottom: 1rem;
-	background-color: red;
-	box-sizing: border-box;
-	width: 50%;
-	margin: 0 auto;
-	border-radius: 7rem;
-}
-
-.content:active{
-	width: 100%;
-	padding-left: 25%;
-	padding-right: 25%;
-}
 
 section.quarter p, .content p{
 	width: 100%;
@@ -209,19 +216,18 @@ section.quarter p, .content p{
 .content.expanded{
 	max-height: 100%;
 	width: 100%;
-	padding-left: 25%;
-	padding-right: 25%;
-	border-bottom: solid 1px white;
+	/*padding-left: 25%;*/
+	/*padding-right: 25%;*/
 	border-radius: 0px;
-	border-top-right-radius: 2rem;
-	border-top-left-radius: 2rem;
+	border-bottom-right-radius: 2rem;
+	border-bottom-left-radius: 2rem;
 }
 
 .content.expanded .expand{
 	display: none;
 }
 
-section.full form input, .expand{
+section.full form input, .expand, ::-webkit-scrollbar-thumb{
 	border: solid 1px black;
 	border-radius: 2rem;
 	background-color: transparent;
@@ -238,7 +244,7 @@ section.full form input, .expand{
 	margin-bottom: 0.5rem;
 }
 
-section.full form input.Subscribe, .expand{
+section.full form input.Subscribe, .expand, ::-webkit-scrollbar-thumb{
 	cursor: pointer;
 	background-color: rgba(255,255,255,0.8);
 }
