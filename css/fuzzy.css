@@ -164,7 +164,8 @@ main{
   margin-top: 10rem;
   /*opacity: 0;*/
   /*pointer-events: none;*/
-  width: 50%;
+  box-sizing: border-box;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
