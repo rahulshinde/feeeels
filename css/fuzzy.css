@@ -112,7 +112,9 @@ p:first-of-type{ text-indent: 0%; }
 }
 
 .styled_h1{
-  color: red;
+  font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
+  text-transform: uppercase;
+  background-color: lightgray;
   letter-spacing: -0.05em;
 }
 

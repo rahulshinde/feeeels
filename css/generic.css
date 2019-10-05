@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li, form{
 }
 
 h1, h2, h3{
-  font-family: Arial, sans-serif;
+  font-family: 'Lausanne-300', Arial, sans-serif;
   text-transform: uppercase;
   font-weight: normal;
 }
@@ -55,7 +55,7 @@ h1{
 h2{
   margin-top: 4rem;
   margin-bottom: 2rem;
-  font-family: Arial, sans-serif;
+  font-family: 'Lausanne-300', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4em;
   letter-spacing: 0.66rem;
@@ -72,12 +72,13 @@ h3{
 }
 
 .issue{
+  font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
   color: red;
   letter-spacing: -0.05em;
 }
 
 p, ul{
-  font-family: Arial, sans-serif;
+  font-family: 'Lausanne-300', Arial, sans-serif;
   font-size: 1rem;
   line-height: 1em;
   letter-spacing: 0.1rem;
