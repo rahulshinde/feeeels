@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
   document.body.classList.add('order_' + random_num);
 
   if (document.body.classList.contains('issue')){
-    document.body.querySelector('.index_link').addEventListener('click', jumpToLink);
+    // document.body.querySelector('.index_link').addEventListener('click', jumpToLink);
     document.body.querySelector('.menu').addEventListener('click', backToMenu);
   } 
   var expandable = document.body.querySelectorAll('.expand');
@@ -14,12 +14,11 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function jumpToLink(){
-  var scroll_position = $('main').offset().top;
-  $(document).scrollTop(scroll_position - 100); 
+  scrollTo(document.querySelector('main'));
 }
 
 function backToMenu(){
-  $(document).scrollTop(0); 
+  scrollTo(document.querySelector('nav'));
 }
 
 function toggleOpenSection(e){
@@ -44,7 +43,7 @@ function scrollTo(target){
 function offset(el) {
   var rect = el.getBoundingClientRect(),
   scroll_top = window.pageYOffset || document.documentElement.scrollTop;
-  return rect.top + scroll_top * 0.95;
+  return rect.top + scroll_top;
 }
 
 if (!Element.prototype.matches) {

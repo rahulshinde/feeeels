@@ -65,16 +65,6 @@
 .order_3 .index_link:nth-child(2) { order: 3; }
 .order_3 .index_link:nth-child(19) { order: 1; }
 
-.nav_hidden #main_index{
-  /*opacity: 0;*/
-  pointer-events: none;
-}
-
-.nav_hidden main{
-  /*opacity: 1;*/
-  pointer-events: auto;
-}
-
 h1{
   text-transform: uppercase;
 }
@@ -89,8 +79,6 @@ p:first-of-type{ text-indent: 0%; }
 #main_index h1{
   text-align: center;
   width: 100%;
-  margin-top: 20rem;
-  margin-bottom: 10rem;
   top: 0;
   left: 0;
   box-sizing: border-box;
@@ -105,17 +93,9 @@ p:first-of-type{ text-indent: 0%; }
   flex-wrap: wrap;
   overflow-y: auto;
   pointer-events: auto;
-  background-color: #fff;
   z-index: 100;
   position: relative;
-  border-bottom: 1px solid #000;
-}
-
-.styled_h1{
-  font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
-  text-transform: uppercase;
-  background-color: lightgray;
-  letter-spacing: -0.05em;
+  background-color: rgb(210,210,210);
 }
 
 #main_index h2{
@@ -152,40 +132,59 @@ p:first-of-type{ text-indent: 0%; }
   width: 50%;
 }
 
+.issue_heading{
+  padding-top: 0.5rem;
+  font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em;
+  color: white;
+  mix-blend-mode: exclusion;
+}
+
 .menu{
   position: fixed;
-  top: 20rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0rem;
+  width: 4%;
+  margin-top: 0;
+  padding: 0.4rem 0;
+  text-align: center;
+  left: 0;
 }
 
 main{
   text-align: center;
-  margin-top: 10rem;
-  /*opacity: 0;*/
-  /*pointer-events: none;*/
-  width: 50%;
+  box-sizing: border-box;
+  width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-main section{
-  margin-bottom: 10rem;
-}
-
-main section .expand{
-  display: none;
-}
-
-main section:not(.expanded){
-  max-height: 30vh; 
+.content{
   overflow-y: hidden;
-  border-bottom: 1px solid #000;
+  max-height: 12rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto 0 11%;
   position: relative;
+  /*border-radius: 7rem;*/
 }
 
-main section:not(.expanded) .expand{
+.content:active,
+.content.expanded{
+  width: 94%;
+  /*padding-left: 25%;*/
+  margin-left: 4%;
+  /*padding-right: 25%;*/
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.content:not(.expanded) .expand{
   display: block;
   position: absolute;
   bottom: 1rem;
@@ -193,38 +192,78 @@ main section:not(.expanded) .expand{
   transform: translateX(-50%);
 }
 
-main p{
-  text-align: left;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-main img{
-  max-width: 80%;
-  max-height: 50vh;
+.content.expanded .bubble,
+.content:active .bubble{
   display: block;
-  margin: 1rem auto;
-
 }
 
-.button{
-  border: solid 1px black;
-  border-radius: 2rem;
-  background-color: transparent;
-  color: black;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.4em;
-  text-transform: uppercase;
-  padding: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-right: 1rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: rgba(255,255,255,0.8);
-  z-index: 10;
+.content.expanded .bubble *:not(.expand):not(.image),
+.content:active .bubble *:not(.expand):not(.image){
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  font-size: 1.4rem;
 }
+
+.content.expanded .bubble .image,
+.content:active .bubble .image{
+  margin-left: 30%;
+  width: 45%;
+  cursor: zoom-in;
+}
+
+.content.expanded .bubble .image.reference,
+.content:active .bubble .image.reference{
+  margin-left: 30%;
+  width: 30%;
+  cursor: zoom-in;
+}
+
+.content.expanded{
+  position: relative;
+}
+
+.content.expanded .bubble .image:active,
+.content:active .bubble .image:active{
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  cursor: zoom-out;
+  mix-blend-mode: normal;
+  filter: grayscale(0);
+}
+
+.content .bubble{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.content .bubble *:not(.expand){
+    width: 16.66%;
+    display: block;
+}
+
+.content .bubble *:not(.image):not(.expand){
+    color: white;
+    mix-blend-mode: exclusion;
+}
+
+.bubble_item{
+  margin-bottom: 2rem;
+}
+
+.bubble_item.text{
+  text-align: left;
+}
+
+.bubble_item.reference{
+  filter:grayscale(100%);
+  -webkit-filter:grayscale(100%);
+  mix-blend-mode: multiply;
+}
+
 
 @media (max-width: 1280px){
   .index_link{
