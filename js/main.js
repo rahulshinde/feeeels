@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   document.body.classList.add('order_' + random_num);
 
-  var expandable = document.body.querySelectorAll('.expand');
+  var expandable = document.body.querySelectorAll('.content');
   [].forEach.call(expandable, function(expand){
     expand.addEventListener('click', toggleOpenSection);
   });
@@ -18,13 +18,22 @@ function backToMenu(){
 }
 
 function toggleOpenSection(e){
+
+  var expanding = e.target.closest('.content');
+
+
+  if(expanding.classList.contains("expanded")){
+    return;
+  }
+
   var contents = document.body.querySelectorAll('.content');
 
   [].forEach.call(contents, function(content) {
     content.classList.remove('expanded');
   });
 
-  var expanding = e.target.closest('.content')
+
+  
 
   expanding.classList.add('expanded');
 

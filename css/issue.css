@@ -68,16 +68,16 @@
 nav{
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 10%;
   z-index: 100;
 }
 
-nav:hover .issue_heading.nav_item:after{
+nav:hover .nav_item:after{
   content: '';
   position: absolute;
   top: 0;
-  left: 100%;
+  right: 100%;
   width: 90vw;
   height: 100%;
   background-color: inherit;
@@ -86,7 +86,7 @@ nav:hover .issue_heading.nav_item:after{
 }
 
 @media(any-hover: none ){
-  nav:active .issue_heading.nav_item:after{
+  nav:active .nav_item:after{
     content: '';
     position: absolute;
     top: 0;
@@ -99,12 +99,12 @@ nav:hover .issue_heading.nav_item:after{
   }
 }
 
-.issue_heading.nav_item:hover:after{
+.nav_item:hover:after{
   border-bottom-right-radius: 2rem;
 }
 
 
-.issue_heading.nav_item span{
+.nav_item span{
   position: absolute;
   width: 80vw;
   left: 100%;
@@ -116,11 +116,11 @@ nav:hover .issue_heading.nav_item:after{
   
 }
 
-nav:hover .issue_heading.nav_item span{
+nav:hover .nav_item span{
   opacity: 1;
 }
 
-.issue_heading.nav_item{
+.nav_item{
   position: relative;
   display: block;
   padding-left: 100%;
@@ -133,7 +133,7 @@ nav:hover .issue_heading.nav_item span{
   z-index: 2;
 }
 
-.issue_heading.nav_item span{
+.nav_item span{
   opacity: 0;
   pointer-events: none;
 }
@@ -174,11 +174,11 @@ p:first-of-type{ text-indent: 0%; }
   padding-top: 0.5rem;
   font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
-  letter-spacing: -0.05em;
-  color: white;
-  mix-blend-mode: exclusion;
+  letter-spacing: 0.1em;
+  color: #000;
+  /*mix-blend-mode: exclusion;*/
 }
 
 .issue_header{
@@ -231,14 +231,19 @@ main{
 
 .content:not(.expanded):active,
 .content.expanded{
+  font-size: 2rem;
   width: 96%;
-  /*padding-left: 25%;*/
-  margin-left: 4%;
+  margin-right: 4%;
   padding-right: calc(4% + 1rem);
   box-sizing: border-box;
-  /*padding-right: 25%;*/
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
+}
+
+.content:not(.expanded):active h2,
+.content.expanded h2{
+  font-size: 1.4rem; 
+  margin-bottom: 2rem;
 }
 
 @media(max-width: 768px){
@@ -255,13 +260,13 @@ main{
 .content:not(.expanded) .expand{
   display: block;
   position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 50%;
+  left: 100%;
+  transform: translate(-50%, 50%);
 }
 
 .content:not(.expanded):active .expand{
-  left: 48%;
+  left: 93.75%;
 }
 
 .content.expanded .bubble,
@@ -327,8 +332,8 @@ main{
 }
 
 .content .bubble *:not(.image):not(.expand){
-    color: white;
-    mix-blend-mode: exclusion;
+    color: black;
+    /*mix-blend-mode: exclusion;*/
 }
 
 .bubble_item{
