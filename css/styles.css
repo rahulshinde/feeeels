@@ -146,15 +146,6 @@ body{
   }
 }
 
-
-nav{
-	position: relative;
-	margin-top: 20rem;
-	width: 100%;
-	z-index: 0;
-	
-}
-
 section.half,
 section.quarter{
 	position: relative;

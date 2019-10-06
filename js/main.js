@@ -3,10 +3,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
   document.body.classList.add('order_' + random_num);
 
-  if (document.body.classList.contains('issue')){
-    // document.body.querySelector('.index_link').addEventListener('click', jumpToLink);
-    document.body.querySelector('.menu').addEventListener('click', backToMenu);
-  } 
   var expandable = document.body.querySelectorAll('.expand');
   [].forEach.call(expandable, function(expand){
     expand.addEventListener('click', toggleOpenSection);
@@ -62,3 +58,6 @@ if (!Element.prototype.closest) {
     return null;
   };
 }
+
+
+
