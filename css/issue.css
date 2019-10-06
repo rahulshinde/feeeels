@@ -6,6 +6,33 @@
     cursor: pointer;
     background-color: rgb(214, 214, 214);
   }
+
+  nav:hover .nav_item:not(.current):hover:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 90vw;
+    height: 100%;
+    background-color: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .nav_item:hover:after{
+    border-bottom-left-radius: 2rem;
+  }
+
+  nav:hover .nav_item:not(.current):hover span{
+    opacity: 1;
+  }
+
+  .nav_item:hover:before{
+    font-size: 4rem;
+  }
+
+  .nav_item:hover{
+    cursor: pointer;
+  }
 }
 
 #issue_content_wrapper{
@@ -19,18 +46,6 @@ nav.sticky{
   left: 90%;
   width: 10%;
   z-index: 100;
-}
-
-nav:hover .nav_item:not(.current):hover:after{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 100%;
-  width: 90vw;
-  height: 100%;
-  background-color: inherit;
-  pointer-events: none;
-  z-index: -1;
 }
 
 @media(any-hover: none ){
@@ -47,10 +62,6 @@ nav:hover .nav_item:not(.current):hover:after{
   }
 }
 
-.nav_item:hover:after{
-  border-bottom-left-radius: 2rem;
-}
-
 
 .nav_item span{
   position: absolute;
@@ -63,10 +74,6 @@ nav:hover .nav_item:not(.current):hover:after{
   font-size: 1rem;
   text-transform: uppercase;
   
-}
-
-nav:hover .nav_item:not(.current):hover span{
-  opacity: 1;
 }
 
 .nav_item{
@@ -94,14 +101,6 @@ nav:hover .nav_item:not(.current):hover span{
   font-size: 2rem;
   transform: translate(50%, -50%);
   opacity: 1;
-}
-
-.nav_item:hover:before{
-  font-size: 4rem;
-}
-
-.nav_item:hover{
-  cursor: pointer;
 }
 
 .nav_item span{
@@ -220,15 +219,6 @@ main{
   display: block;
   font-size: 1.4rem; 
   margin-bottom: 2rem;
-}
-
-@media(max-width: 768px){
-  .content:not(.expanded):active,
-  .content.expanded{
-    padding-right: 1rem;
-    width: 90%;
-    margin-right: 10%;
-  }
 }
 
 .content.expanded{
@@ -355,15 +345,6 @@ main{
   box-sizing: border-box;
 }
 
-
-@media(max-width: 768px){
-
-  .bubble_item.text{
-    font-size: 0.2rem;
-  }
-
-}
-
 .bubble_item.reference{
   filter:grayscale(100%);
   -webkit-filter:grayscale(100%);
@@ -389,10 +370,21 @@ main{
     width: 100%;
   }
 
+  .bubble_item.text{
+    font-size: 0.2rem;
+  }
+
   .content.expanded .bubble *:not(.expand):not(.image),
   .content:not(.expanded):active .bubble *:not(.expand):not(.image){
     margin-left: 6%;
     width: 90%;
     font-size: 1.15rem;
+  }
+
+  .content:not(.expanded):active,
+  .content.expanded{
+    padding-right: 1rem;
+    width: 90%;
+    margin-right: 10%;
   }
 }
