@@ -20,6 +20,10 @@
 /*=======================================*/
 
 .site_credits{
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
   margin-top: 10rem;
 }
 
@@ -88,6 +92,37 @@ h3{
   letter-spacing: -0.05em;
 }
 
+
+.issue_link{
+  display: block;
+  margin: 0 auto;  
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  width: 50%;
+  font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
+  font-size: 2rem;
+  color: black;
+  
+  letter-spacing: -0.05em;
+  background-color: white;
+}
+
+.issue_link a{
+  display: block;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: initial;
+  color: black;
+}
+
+.issue_link:hover, .issue_link:active{
+  background-color: black;
+}
+.issue_link:hover a{
+  color: white;
+}
+
 p, ul{
   font-family: 'Lausanne-300', Arial, sans-serif;
   font-size: 1rem;
@@ -106,6 +141,171 @@ li{
   padding-left: 0;
   margin-left: 0;
 }
+
+/*
+ * Persistent article nav
+ *
+ *
+ */
+
+nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 10%;
+  z-index: 100;
+}
+
+nav:hover .nav_item:not(.current):hover:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 90vw;
+  height: 100%;
+  background-color: inherit;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media(any-hover: none ){
+  nav:active .nav_item:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 90vw;
+    height: 100%;
+    background-color: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.nav_item:hover:after{
+  border-bottom-left-radius: 2rem;
+}
+
+
+.nav_item span{
+  position: absolute;
+  width: 80vw;
+  right: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 20vh;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'feeeels_fuzzyregular', Arial, sans-serif;
+}
+
+nav:hover .nav_item:not(.current):hover span{
+  opacity: 1;
+}
+
+.nav_item{
+  position: relative;
+  display: block;
+  padding-left: 100%;
+  height: 20vh;
+  padding-top: 0;
+  color: #000 !important;
+  mix-blend-mode: normal !important;
+  
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+.nav_item.current:before{
+  content: '-';
+}
+
+.nav_item:before{
+  content: '+';
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  font-size: 2rem;
+  transform: translate(50%, -50%);
+  opacity: 1;
+}
+
+.nav_item:hover:before{
+  font-size: 4rem;
+}
+
+.nav_item:hover{
+  cursor: pointer;
+}
+
+.nav_item span{
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*
+ * COLOPHON
+ *
+ */
+
+ #colophon{
+  text-align: left;
+  padding: 1rem;
+  box-sizing: border-box;
+  /*background-color: rgb(210,210,210);*/
+  margin-left: 10%;
+  width: 90%;
+  padding-right: calc(10% + 1rem);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#colophon h1{
+  text-align: left;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.colophon_heading{
+  font-family: 'Lausanne-300', Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  text-align: left;
+  letter-spacing: 0.1em;
+}
+
+.colophon_content{
+  display: block;
+  font-family: 'Lausanne-300', Arial, sans-serif;
+  text-indent: 10%;
+}
+
+.colophon_section{
+  width: 20%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+@media(max-width: 768px){
+  #colophon{
+    margin-left: 0;
+    width: 90%;
+    padding-right: 0;
+  }
+
+  .colophon_section{
+    width: 50%;
+  }
+  
+}
+
+
+/*
+ *
+ */ 
+
 
 .button{
   border: solid 1px black;
@@ -157,11 +357,16 @@ section.quarter{
 
 section.full{
 	display: block;
-	width: 100%;
-	margin-bottom: 8rem;
+  box-sizing: border-box;
+	width: 90%;
+  padding-left: 1rem;
+	padding-top: 10.4rem;
+  margin-bottom: 8rem;
 }
+
 section.full p, section.full ul, section.full form{
-	margin: 0 auto;
+	font-size: 1.4rem;
+  margin: 0 auto;
 	width: 50%;
 }
 
@@ -198,8 +403,20 @@ section.quarter p, .content p{
 	display: none;
 }
 
-section.full form input, .expand, ::-webkit-scrollbar-thumb{
-	border: solid 1px black;
+
+
+/*================================
+ * Button + Input Styles
+ *================================*/
+
+.primary_button{
+  display: inline-block;
+}
+
+section.full form input, footer form input, .primary_button, .expand, ::-webkit-scrollbar-thumb{
+	-moz-appearance: none;
+-webkit-appearance: none;
+  border: solid 1px black;
 	border-radius: 2rem;
 	background-color: transparent;
 	color: black;
@@ -215,7 +432,7 @@ section.full form input, .expand, ::-webkit-scrollbar-thumb{
 	margin-bottom: 0.5rem;
 }
 
-section.full form input.Subscribe, .expand, ::-webkit-scrollbar-thumb{
+footer form input.Subscribe, .primary_button, .expand, ::-webkit-scrollbar-thumb{
 	cursor: pointer;
 	background-color: rgba(255,255,255,0.8);
 }
@@ -250,10 +467,15 @@ section.quarter{
 
 
 @media(max-width: 768px){
-	section.full p, section.full ul, section.full form{
+	section.full p, section.full ul, section.full form, .issue_link{
 		margin: 0 auto;
-		width: 95%;
+		width: 90%;    
+    font-size: 1.15rem;
 	}
+
+  .issue_link{
+    margin-top: 2rem;
+  }
 
 	section.quarter{
 		width: 100%;
@@ -264,4 +486,65 @@ section.quarter{
 	section.quarter p, .content p{
 		width: 95%;
 	}
+}
+
+
+footer{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 10%;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+  
+}
+
+section.col_2{
+  flex-basis: 40%;
+}
+
+footer form{
+    display: flex;
+
+  }
+
+  footer form input{
+    max-width: 50%;
+    margin-right: 0;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: -1px;
+  }
+
+  footer form input:not(.Subscribe){
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+  }
+
+@media(max-width: 768px){
+  footer{
+    width: calc(90% - 1rem);
+    margin-left: auto;
+    margin: 0 auto;
+    display: block;
+    padding-left: 0;
+  }
+
+  section.col_2{
+    display: block;
+    width: 100%;
+    padding-left: 0rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+  } 
 }

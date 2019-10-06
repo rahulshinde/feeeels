@@ -306,44 +306,7 @@ main{
   text-align: left;
 }
 
-#colophon{
-  text-align: left;
-  padding: 1rem;
-  box-sizing: border-box;
-  /*background-color: rgb(210,210,210);*/
-  margin-left: 10%;
-  width: 90%;
-  padding-right: calc(10% + 1rem);
-  display: flex;
-  flex-wrap: wrap;
-}
 
-#colophon h1{
-  text-align: left;
-  width: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.colophon_heading{
-  font-family: 'Lausanne-300', Arial, sans-serif;
-  font-size: 1rem;
-  text-transform: none;
-  text-align: left;
-  letter-spacing: 0.1em;
-}
-
-.colophon_content{
-  display: block;
-  font-family: 'Lausanne-300', Arial, sans-serif;
-  text-indent: 10%;
-}
-
-.colophon_section{
-  width: 20%;
-  padding: 1rem;
-  box-sizing: border-box;
-}
 
 .bubble_item.reference{
   filter:grayscale(100%);
