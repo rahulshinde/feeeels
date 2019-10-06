@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var expandable = document.body.querySelectorAll('.content');
   [].forEach.call(expandable, function(expand){
     expand.addEventListener('click', function(){
-      toggleOpenSection(expand);
+      toggleOpenSection(expand, false);
     });
   });
 
@@ -20,15 +20,18 @@ function toggleSectionWithNav(e){
   console.log('hello1');
   var nav_item = e.target.closest('.nav_item');
   var expanding = document.querySelector('#' + nav_item.dataset.target)
-  toggleOpenSection(expanding);
+  toggleOpenSection(expanding, true);
 }
 
-function toggleOpenSection(expanding){
+function toggleOpenSection(expanding, close){
   console.log(expanding);
-  // var expanding = e.target.closest('.content');
 
 
   if(expanding.classList.contains("expanded")){
+    if(close){
+      expanding.classList.remove('expanded');
+      document.body.querySelector('.nav_item.current').classList.remove('current');
+    }
     return;
   }else{
     var contents = document.body.querySelectorAll('.content');
@@ -39,7 +42,6 @@ function toggleOpenSection(expanding){
 
     expanding.classList.add('expanded');
     [].forEach.call(document.body.querySelectorAll('.nav_item'), function(content) {
-      console.log(content);
       content.classList.remove('current');
     });
     document.querySelector('.nav_item' + expanding.dataset.section).classList.add('current');
