@@ -249,7 +249,9 @@ main{
 @media(max-width: 768px){
   .content:not(.expanded):active,
   .content.expanded{
-    padding-right: 0;
+    padding-right: 1rem;
+    width: 90%;
+    margin-right: 10%;
   }
 }
 
