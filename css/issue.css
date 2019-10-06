@@ -85,6 +85,20 @@ nav:hover .issue_heading.nav_item:after{
   z-index: -1;
 }
 
+@media(any-hover: none ){
+  nav:active .issue_heading.nav_item:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 90vw;
+    height: 100%;
+    background-color: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
 .issue_heading.nav_item:hover:after{
   border-bottom-right-radius: 2rem;
 }
@@ -227,6 +241,13 @@ main{
   border-bottom-left-radius: 2rem;
 }
 
+@media(max-width: 768px){
+  .content:not(.expanded):active,
+  .content.expanded{
+    padding-right: 0;
+  }
+}
+
 .content.expanded{
   padding-top:6rem;
 }
@@ -261,6 +282,7 @@ main{
 .content:not(.expanded):active .bubble *:not(.expand):not(.image){
   margin-left: 6%;
   width: 90%;
+  font-size: 1.15rem;
 }
 }
 
