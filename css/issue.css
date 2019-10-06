@@ -8,67 +8,15 @@
   }
 }
 
-.order_1 .index_link:nth-child(19) { order: 18; }
-.order_1 .index_link:nth-child(2) { order: 17; }
-.order_1 .index_link:nth-child(3) { order: 16; }
-.order_1 .index_link:nth-child(4) { order: 15; }
-.order_1 .index_link:nth-child(5) { order: 14; }
-.order_1 .index_link:nth-child(6) { order: 13; }
-.order_1 .index_link:nth-child(7) { order: 12; }
-.order_1 .index_link:nth-child(8) { order: 11; }
-.order_1 .index_link:nth-child(9) { order: 10; }
-.order_1 .index_link:nth-child(10) { order: 9; }
-.order_1 .index_link:nth-child(11) { order: 8; }
-.order_1 .index_link:nth-child(12) { order: 7; }
-.order_1 .index_link:nth-child(13) { order: 1; }
-.order_1 .index_link:nth-child(14) { order: 5; }
-.order_1 .index_link:nth-child(15) { order: 4; }
-.order_1 .index_link:nth-child(16) { order: 3; }
-.order_1 .index_link:nth-child(17) { order: 2; }
-.order_1 .index_link:nth-child(18) { order: 6; }
+#issue_content_wrapper{
+  margin-top: -100vh;
+}
 
-.order_2 .index_link:nth-child(19) { order: 2; }
-.order_2 .index_link:nth-child(2) { order: 4; }
-.order_2 .index_link:nth-child(3) { order: 6; }
-.order_2 .index_link:nth-child(4) { order: 8; }
-.order_2 .index_link:nth-child(5) { order: 10; }
-.order_2 .index_link:nth-child(6) { order: 12; }
-.order_2 .index_link:nth-child(7) { order: 14; }
-.order_2 .index_link:nth-child(8) { order: 16; }
-.order_2 .index_link:nth-child(9) { order: 18; }
-.order_2 .index_link:nth-child(10) { order: 17; }
-.order_2 .index_link:nth-child(11) { order: 15; }
-.order_2 .index_link:nth-child(12) { order: 13; }
-.order_2 .index_link:nth-child(13) { order: 11; }
-.order_2 .index_link:nth-child(14) { order: 9; }
-.order_2 .index_link:nth-child(15) { order: 7; }
-.order_2 .index_link:nth-child(16) { order: 1; }
-.order_2 .index_link:nth-child(17) { order: 3; }
-.order_2 .index_link:nth-child(18) { order: 5; }
-
-.order_3 .index_link:nth-child(18) { order: 2; }
-.order_3 .index_link:nth-child(17) { order: 4; }
-.order_3 .index_link:nth-child(16) { order: 6; }
-.order_3 .index_link:nth-child(15) { order: 8; }
-.order_3 .index_link:nth-child(14) { order: 10; }
-.order_3 .index_link:nth-child(13) { order: 12; }
-.order_3 .index_link:nth-child(12) { order: 14; }
-.order_3 .index_link:nth-child(11) { order: 16; }
-.order_3 .index_link:nth-child(10) { order: 18; }
-.order_3 .index_link:nth-child(9) { order: 17; }
-.order_3 .index_link:nth-child(8) { order: 15; }
-.order_3 .index_link:nth-child(7) { order: 13; }
-.order_3 .index_link:nth-child(6) { order: 11; }
-.order_3 .index_link:nth-child(5) { order: 9; }
-.order_3 .index_link:nth-child(4) { order: 7; }
-.order_3 .index_link:nth-child(3) { order: 5; }
-.order_3 .index_link:nth-child(2) { order: 3; }
-.order_3 .index_link:nth-child(19) { order: 1; }
-
-nav{
-  position: fixed;
+nav.sticky{
+  position: sticky;
+  position: -webkit-sticky;
   top: 0;
-  right: 0;
+  left: 90%;
   width: 10%;
   z-index: 100;
 }
@@ -309,16 +257,8 @@ main{
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  padding: 0rem;
   font-size: 1.4rem;
-}
-
-@media(max-width: 768px){
-  .content.expanded .bubble *:not(.expand):not(.image),
-.content:not(.expanded):active .bubble *:not(.expand):not(.image){
-  margin-left: 6%;
-  width: 90%;
-  font-size: 1.15rem;
-}
 }
 
 .content.expanded .bubble .image,
@@ -351,13 +291,15 @@ main{
 
 .content .bubble{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .content .bubble *:not(.expand){
-    width: 16.66%;
+    width: 20%;
+    padding: 1rem;
+    box-sizing: border-box;
     display: block;
 }
 
@@ -373,6 +315,46 @@ main{
 .bubble_item.text{
   text-align: left;
 }
+
+#colophon{
+  text-align: left;
+  padding: 1rem;
+  box-sizing: border-box;
+  /*background-color: rgb(210,210,210);*/
+  margin-left: 10%;
+  width: 90%;
+  padding-right: calc(10% + 1rem);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#colophon h1{
+  text-align: left;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.colophon_heading{
+  font-family: 'Lausanne-300', Arial, sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  text-align: left;
+  letter-spacing: 0.1em;
+}
+
+.colophon_content{
+  display: block;
+  font-family: 'Lausanne-300', Arial, sans-serif;
+  text-indent: 10%;
+}
+
+.colophon_section{
+  width: 20%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 
 @media(max-width: 768px){
 
@@ -407,19 +389,10 @@ main{
     width: 100%;
   }
 
-  .index_link h2{
-    width: 100%;
+  .content.expanded .bubble *:not(.expand):not(.image),
+  .content:not(.expanded):active .bubble *:not(.expand):not(.image){
+    margin-left: 6%;
+    width: 90%;
+    font-size: 1.15rem;
   }
-
-  .index_link p{
-    display: none;
-  }
-
-  .index_link img{
-    display: none;
-  }
-}
-
-@media (max-width: 630px){
-  
 }

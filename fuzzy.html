@@ -9,25 +9,24 @@
   <link href="css/issue.css" rel="stylesheet">
 </head>
 <body class="issue">
-  <nav id="main_index">
-    <span class="nav_item nav_item1" style="background-color: #ad905a;" data-target="section1">
-      <span>Post-it Prints</span>
-    </span>
-    <span class="nav_item nav_item2" style="background-color: #0088ad;" data-target="section2">
-      <span>NASA</span>
-    </span>
-    <span class="nav_item nav_item3" style="background-color: beige;" data-target="section3">
-      <span>Type Specimen</span>
-    </span>
-    <span class="nav_item nav_item4" style="background-color: green;" data-target="section4">
-      <span>Illustrations</span>
-    </span>
-    <span class="nav_item nav_item5" style="background-color: red;" data-target="section5">
-      <span>Fuzzy Logic and Slightly More Human Design</span>
-    </span>
-  </nav>
-
-  <main id="first_post">
+  <main id="issue_content_wrapper">
+    <nav id="main_index" class='sticky'>
+      <span class="nav_item nav_item1" style="background-color: #ad905a;" data-target="section1">
+        <span>Post-it Prints</span>
+      </span>
+      <span class="nav_item nav_item2" style="background-color: #0088ad;" data-target="section2">
+        <span>NASA</span>
+      </span>
+      <span class="nav_item nav_item3" style="background-color: beige;" data-target="section3">
+        <span>Type Specimen</span>
+      </span>
+      <span class="nav_item nav_item4" style="background-color: green;" data-target="section4">
+        <span>Illustrations</span>
+      </span>
+      <span class="nav_item nav_item5" style="background-color: red;" data-target="section5">
+        <span>Fuzzy Logic and Slightly More Human Design</span>
+      </span>
+    </nav>
     <!-- <h1 class="issue_header">Fuzzy</h1> -->
     <section class="content" id="section1" data-section="1" style="background-color: #ad905a;">
       <h2 class="issue_heading">Section Two</h2>
@@ -99,6 +98,83 @@
       </div>
     </section>
   </main>
+
+  <footer id="colophon">
+    <h1>Colophon</h1>
+    <div class="colophon_section">
+      <h2 class="colophon_heading">all the feeeels</h2>
+      <span class="colophon_content">Angela Lorenzo</span>
+      <span class="colophon_content">Drew Litowitz</span>
+      <span class="colophon_content">Lauren Traugott-Campbell </span>
+      <span class="colophon_content">Sarah Mohammadi</span>
+    </div>
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Editors</h2>
+      <span class="colophon_content">Diane Lee</span>
+      <span class="colophon_content">Yang-Yi Go</span>
+    </div> 
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Copy Editor</h2>
+      <span class="colophon_content">Deana Lorenzo</span>
+    </div> 
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Advertising</h2>
+      <span class="colophon_content">
+        For advertising, media partnerships and special project opportunities: feelings@feeeels.com
+      </span>
+    </div> 
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Typefaces</h2>
+      <span class="colophon_content">
+        feeeels—fuzzy by Jack Halten Fahnestock
+      </span>
+      <span class="colophon_content">
+        Lausanne by Nizar Kazan + Co.
+      </span>
+    </div>
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Sponsors</h2>
+      <span class="colophon_content">Dan Erkes</span>
+      <span class="colophon_content">Cem Eskinazi </span>
+      <span class="colophon_content">Nizar Kazan + Co. </span>
+      <span class="colophon_content">Diane Lee</span>
+      <span class="colophon_content">Dana Litowitz </span>
+      <span class="colophon_content">Reid Litowitz </span>
+      <span class="colophon_content">Maria Lorenzo </span>
+      <span class="colophon_content">Mariah Luft</span>
+      <span class="colophon_content">Gabe Melcher </span>
+      <span class="colophon_content">Jonathan Morgan </span>
+      <span class="colophon_content">Marie Otsuka </span>
+      <span class="colophon_content">June Shin</span>
+      <span class="colophon_content">Bibi Talebi</span>
+      <span class="colophon_content">Meixin Wang</span>
+    </div>
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Special Thanks</h2>
+      <span class="colophon_content">Dan Erkes</span>
+      <span class="colophon_content">Cem Eskinazi </span>
+      <span class="colophon_content">Nizar Kazan + Co. </span>
+      <span class="colophon_content">Diane Lee</span>
+      <span class="colophon_content">Maria Lorenzo </span>
+      <span class="colophon_content">Mariah Luft</span>
+      <span class="colophon_content">Gabe Melcher </span>
+      <span class="colophon_content">Marie Otsuka </span>
+      <span class="colophon_content">June Shin</span>
+      <span class="colophon_content">Bibi Talebi</span>
+      <span class="colophon_content">Meixin Wang</span>
+    </div>
+
+    <div class="colophon_section">
+      <h2 class="colophon_heading">Copyright</h2>
+      <span class="colophon_content">2019 feeeels magazine Reproduction without permission is prohibited</span>
+    </div>
+  </footer>
 
   <script type="text/javascript" src="js/main.js"></script>
 </body>
