@@ -5,39 +5,47 @@ document.addEventListener("DOMContentLoaded", function(){
 
   var expandable = document.body.querySelectorAll('.content');
   [].forEach.call(expandable, function(expand){
-    expand.addEventListener('click', toggleOpenSection);
+    expand.addEventListener('click', function(){
+      toggleOpenSection(expand);
+    });
+  });
+
+  var nav_items = document.body.querySelectorAll('.nav_item');
+  [].forEach.call(nav_items, function(nav_item){
+    nav_item.addEventListener('click', toggleSectionWithNav);
   });
 });
 
-function jumpToLink(){
-  scrollTo(document.querySelector('main'));
+function toggleSectionWithNav(e){
+  console.log('hello1');
+  var nav_item = e.target.closest('.nav_item');
+  var expanding = document.querySelector('#' + nav_item.dataset.target)
+  toggleOpenSection(expanding);
 }
 
-function backToMenu(){
-  scrollTo(document.querySelector('nav'));
-}
-
-function toggleOpenSection(e){
-
-  var expanding = e.target.closest('.content');
+function toggleOpenSection(expanding){
+  console.log(expanding);
+  // var expanding = e.target.closest('.content');
 
 
   if(expanding.classList.contains("expanded")){
     return;
+  }else{
+    var contents = document.body.querySelectorAll('.content');
+
+    [].forEach.call(contents, function(content) {
+      content.classList.remove('expanded');
+    });
+
+    expanding.classList.add('expanded');
+    [].forEach.call(document.body.querySelectorAll('.nav_item'), function(content) {
+      console.log(content);
+      content.classList.remove('current');
+    });
+    document.querySelector('.nav_item' + expanding.dataset.section).classList.add('current');
+
+    scrollTo(expanding);
   }
-
-  var contents = document.body.querySelectorAll('.content');
-
-  [].forEach.call(contents, function(content) {
-    content.classList.remove('expanded');
-  });
-
-
-  
-
-  expanding.classList.add('expanded');
-
-  scrollTo(expanding)
 }
 
 function scrollTo(target){

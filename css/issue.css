@@ -73,7 +73,7 @@ nav{
   z-index: 100;
 }
 
-nav:hover .nav_item:after{
+nav:hover .nav_item:not(.current):hover:after{
   content: '';
   position: absolute;
   top: 0;
@@ -100,23 +100,24 @@ nav:hover .nav_item:after{
 }
 
 .nav_item:hover:after{
-  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 
 
 .nav_item span{
   position: absolute;
   width: 80vw;
-  left: 100%;
+  right: 100%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   line-height: 20vh;
-  font-size: 3vh;
+  font-size: 1rem;
+  text-transform: uppercase;
   
 }
 
-nav:hover .nav_item span{
+nav:hover .nav_item:not(.current):hover span{
   opacity: 1;
 }
 
@@ -131,6 +132,28 @@ nav:hover .nav_item span{
   
   margin-bottom: 0;
   z-index: 2;
+}
+
+.nav_item.current:before{
+  content: '-';
+}
+
+.nav_item:before{
+  content: '+';
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  font-size: 2rem;
+  transform: translate(50%, -50%);
+  opacity: 1;
+}
+
+.nav_item:hover:before{
+  font-size: 4rem;
+}
+
+.nav_item:hover{
+  cursor: pointer;
 }
 
 .nav_item span{
@@ -236,12 +259,17 @@ main{
   margin-right: 4%;
   padding-right: calc(4% + 1rem);
   box-sizing: border-box;
-  border-bottom-right-radius: 2rem;
+  /*border-bottom-right-radius: 2rem;*/
   border-bottom-left-radius: 2rem;
+}
+
+.content h2{
+  display: none;
 }
 
 .content:not(.expanded):active h2,
 .content.expanded h2{
+  display: block;
   font-size: 1.4rem; 
   margin-bottom: 2rem;
 }
